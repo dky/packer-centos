@@ -64,6 +64,7 @@
 		"scripts": [ 
 			"scripts/vagrant.sh",
 			"scripts/mac.sh",
+			"scripts/update.sh",
 			"scripts/sudo.sh",
 			"scripts/ssh.sh",
 			"scripts/vmtools.sh",
