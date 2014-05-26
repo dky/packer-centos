@@ -1,0 +1,72 @@
+{
+  "builders": [
+    {
+      "type": "vmware-iso",
+		"name": "centos6-32",
+      "boot_command": [
+        "<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/centos6.ks.cfg<enter><wait>"
+      ],
+      "boot_wait": "5s",
+      "disk_size": 10480,
+      "guest_os_type": "rhel6",
+      "http_directory": "http",
+      "iso_checksum": "a4f27ab51d0d2c9d36b68c56b39f752b",
+		"iso_checksum_type": "md5",
+      "iso_url": "file:/iso/CentOS-6.5-i386-minimal.iso",
+		"shutdown_command": "shutdown -h now",
+      "skip_compaction": false,
+      "ssh_username": "root",
+      "ssh_password": "install",
+      "ssh_port": 22,
+      "ssh_wait_timeout": "10000s",
+      "tools_upload_flavor": "linux",
+		"headless": false,
+      "vmx_data": {
+        "memsize": "480",
+        "numvcpus": "1",
+        "cpuid.coresPerSocket": "1"
+      }
+    },
+	 {
+		"type": "vmware-iso",
+		"name": "centos6-64",
+		"boot_command": [
+			"<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/centos6_x64.ks.cfg<enter><wait>"
+		],
+		"boot_wait": "5s",
+		"disk_size": 10480,
+		"guest_os_type": "rhel6-64",
+		"http_directory": "http",
+		"iso_checksum": "0d9dc37b5dd4befa1c440d2174e88a87",
+		"iso_checksum_type": "md5",
+		"iso_url": "file:/iso/CentOS-6.5-x86_64-minimal.iso",
+		"shutdown_command": "shutdown -h now",
+		"skip_compaction": false,
+		"ssh_username": "root",
+		"ssh_password": "install",
+		"ssh_port": 22,
+		"ssh_wait_timeout": "10000s",
+		"tools_upload_flavor": "linux",
+		"headless": false,
+		"vmx_data": {
+				  "memsize": "480",
+				  "numvcpus": "1",
+				  "cpuid.coresPerSocket": "1"
+				}
+	 }
+  	],
+	"provisioners": [
+	 {
+		"type": "shell",
+		"scripts": [ 
+			"scripts/vagrant.sh",
+			"scripts/mac.sh",
+			"scripts/sudo.sh",
+			"scripts/ssh.sh",
+			"scripts/vmtools.sh",
+			"scripts/zero.sh"
+		],
+		"type": "shell"
+	 }
+	]
+}

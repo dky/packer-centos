@@ -1,0 +1,47 @@
+{
+  "builders": [
+    {
+      "boot_command": [
+        "<tab> text ks=http://{{ .HTTPIP }}:{{ .HTTPPort }}/rhel5.ks.cfg<enter><wait>"
+      ],
+      "boot_wait": "5s",
+      "disk_size": 10480,
+      "guest_os_type": "rhel5",
+      "headless": false,
+      "http_directory": "http",
+      "iso_checksum": "8d19b12cb5f65a4b5c2bc61a98abf80c",
+      "iso_checksum_type": "md5",
+      "iso_url": "file:/iso/CentOS-5.10-i386-netinstall.iso",
+      "name": "rhel5-32",
+      "shutdown_command": "shutdown -h now",
+      "skip_compaction": false,
+      "ssh_password": "install",
+      "ssh_port": 22,
+      "ssh_username": "root",
+      "ssh_wait_timeout": "10000s",
+      "tools_upload_flavor": "linux",
+      "type": "vmware-iso",
+      "vmx_data": {
+        "cpuid.coresPerSocket": "1",
+        "memsize": "480",
+        "numvcpus": "1"
+      }
+    }
+  ],
+  "post-processors": [
+    "vagrant"
+  ],
+  "provisioners": [
+    {
+      "scripts": [
+        "scripts/vagrant.sh",
+        "scripts/sudo.sh",
+        "scripts/ssh.sh",
+        "scripts/vmtools.sh",
+        "scripts/zero.sh"
+      ],
+      "type": "shell"
+    }
+  ]
+}
+
