@@ -64,6 +64,7 @@
 			"scripts/sudo.sh",
 			"scripts/ssh.sh",
 			"scripts/vmtools.sh",
+			"scripts/puppet.sh",
 			"scripts/zero.sh"
 		],
 		"type": "shell"
