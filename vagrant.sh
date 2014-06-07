@@ -19,7 +19,7 @@ build () {
 	rm -rf ./output-*
 
 	#Build the boxes
-	$PACKERCMD build template.centos6.json
+	$PACKERCMD build template.$1.json
 
 	#Delete existing vagrant boxes
 	$VAGRANTCMD box remove $BOXNAME1
