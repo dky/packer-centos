@@ -72,6 +72,11 @@
 			"scripts/zero.sh"
 		],
 		"type": "shell"
+	 },
+	 {
+		"type": "file",
+			"source": "bin/serf",
+			"destination": "/usr/local/bin/serf"
 	 }
 	]
 }
