@@ -31,10 +31,6 @@ build () {
 	#Remove the boxes
 	rm -f ./*.box
 
-	terminal-notifier -message "Packer build for $BOXNAME1 and $BOXNAME2 complete" -title "Packer Builds"
-
-}
-
 case "$1" in
 	5) echo "centos$1" 
 	box_type="centos$1"
