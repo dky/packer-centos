@@ -30,6 +30,7 @@ build () {
 
 	#Remove the boxes
 	rm -f ./*.box
+}
 
 case "$1" in
 	5) echo "centos$1" 
