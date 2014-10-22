@@ -20,7 +20,7 @@
       "ssh_port": 22,
       "ssh_wait_timeout": "10000s",
       "tools_upload_flavor": "linux",
-		"headless": true,
+		"headless": false,
       "vmx_data": {
         "memsize": "480",
         "numvcpus": "1",
@@ -47,7 +47,7 @@
 		"ssh_port": 22,
 		"ssh_wait_timeout": "10000s",
 		"tools_upload_flavor": "linux",
-		"headless": true,
+		"headless": false,
 		"vmx_data": {
 				  "memsize": "480",
 				  "numvcpus": "1",
