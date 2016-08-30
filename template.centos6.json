@@ -39,7 +39,7 @@
 		"http_directory": "http",
 		"iso_checksum": "0d9dc37b5dd4befa1c440d2174e88a87",
 		"iso_checksum_type": "none",
-		"iso_url": "file:/iso/CentOS-6.5-x86_64-minimal.iso",
+		"iso_url": "file:/iso/CentOS-6.8-x86_64-netinstall.iso",
 		"shutdown_command": "shutdown -h now",
 		"skip_compaction": false,
 		"ssh_username": "root",
@@ -68,7 +68,6 @@
 			"scripts/sudo.sh",
 			"scripts/ssh.sh",
 			"scripts/vmtools.sh",
-			"scripts/puppet.sh",
 			"scripts/zero.sh"
 		],
 		"type": "shell"
