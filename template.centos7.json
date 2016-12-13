@@ -32,17 +32,14 @@
 		"vagrant"
 	],
 	"provisioners": [
-		{
-			"type": "shell",
-			"scripts": [ 
-				"scripts/vagrant.sh",
-				"scripts/update.sh",
-				"scripts/sudo.sh",
-				"scripts/ssh.sh",
-				"scripts/vmtools.sh",
-				"scripts/zero.sh"
-			],
-			"type": "shell"
-		}
+	{
+		"type": "shell",
+		"scripts": [ 
+			"scripts/vagrant.sh",
+			"scripts/sudo.sh",
+			"scripts/ssh.sh"
+		],
+		"type": "shell"
+	}
 	]
 }
