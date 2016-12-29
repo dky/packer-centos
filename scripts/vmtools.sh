@@ -1,15 +1,12 @@
 #!/bin/bash
 
-echo "Installing vmware tools"
-#make sure perl installed so we can run the script
-#fuse-libs for vmware-block-fuse, this was breaking tools from starting
-yum -y install perl fuse-libs
+#This works with Centos 7.3, download file through vmware since default tools won't compile hgfs
+VMTOOLS=VMwareTools-10.1.0-4449150.tar.gz
 
+echo "Installing vmware tools"
+yum -y install perl fuse-libs gcc gcc-c++ make binutils open-vm-tools kernel-devel
 #perform tools install
-cd /tmp
-mkdir -p /mnt/cdrom
-mount -o loop /root/linux.iso /mnt/cdrom
-tar zxvf /mnt/cdrom/VMwareTools-*.tar.gz -C /tmp/
-/tmp/vmware-tools-distrib/vmware-install.pl -d
-umount /mnt/cdrom
-rm /root/linux.iso
+tar -xzvf /tmp/$VMTOOLS -C /tmp/
+sudo /tmp/vmware-tools-distrib/vmware-install.pl -d
+#create hgfs dir
+sudo mkdir /mnt/hgfs

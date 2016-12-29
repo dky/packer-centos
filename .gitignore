@@ -3,3 +3,4 @@
 output-*
 .DS_store
 bin
+*.tar.gz
