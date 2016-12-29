@@ -8,5 +8,3 @@ yum -y install perl fuse-libs gcc gcc-c++ make binutils open-vm-tools kernel-dev
 #perform tools install
 tar -xzvf /tmp/$VMTOOLS -C /tmp/
 sudo /tmp/vmware-tools-distrib/vmware-install.pl -d
-#create hgfs dir
-sudo mkdir /mnt/hgfs

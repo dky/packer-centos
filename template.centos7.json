@@ -33,6 +33,11 @@
 	],
 	"provisioners": [
 	{
+		"type": "file",
+		"source": "VMwareTools-10.1.0-4449150.tar.gz",
+		"destination": "/tmp/VMwareTools-10.1.0-4449150.tar.gz"
+	},
+	{
 		"type": "shell",
 		"scripts": [
 			"scripts/vagrant.sh",
@@ -40,11 +45,6 @@
 			"scripts/vmtools.sh",
 			"scripts/ssh.sh"
 		]
-	},
-	{
-		"type": "file",
-		"source": "VMwareTools-10.1.0-4449150.tar.gz",
-		"destination": "/tmp/VMwareTools-10.1.0-4449150.tar.gz"
 	}
 	]
 }
